@@ -18,7 +18,7 @@
                 <td>{{task.date_created.date()}}</td>
                 <td>
                     <a href="#" style="background-color: green; padding: 2px 6px 2px 6px; border-radius: 8px;">Update</a>
-                    <a href="#" style="background-color: grey; padding: 2px 9px 2px 9px; border-radius: 8px;">Delete</a>
+                    <a href="/delete/{{task.id}}" style="background-color: grey; padding: 2px 9px 2px 9px; border-radius: 8px;">Delete</a>
                 </td>
             </tr>
             {% endfor %}
