@@ -17,7 +17,7 @@
                 <td>{{task.content}}</td>
                 <td>{{task.date_created.date()}}</td>
                 <td>
-                    <a href="#" style="background-color: green; padding: 2px 6px 2px 6px; border-radius: 8px;">Update</a>
+                    <a href="/update/{{task.id}}" style="background-color: green; padding: 2px 6px 2px 6px; border-radius: 8px;" >Update</a>
                     <a href="/delete/{{task.id}}" style="background-color: grey; padding: 2px 9px 2px 9px; border-radius: 8px;">Delete</a>
                 </td>
             </tr>
@@ -25,7 +25,7 @@
     </table>
 
     <form action="/" method="post">
-        <input type="text" name="content" id="content">
+        <input type="text" name="content" id="content" ">
         <input type="submit" value="Add task">
     </form>
 </div>
