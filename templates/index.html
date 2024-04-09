@@ -5,7 +5,7 @@
 
 {% block body %} 
 <div class="content">
-    <h1>Task master</h1>
+    <h1 style="text-align: center;">Task master</h1>
     <table>
         <tr>
             <th>Task</th>
@@ -17,8 +17,8 @@
                 <td>{{task.content}}</td>
                 <td>{{task.date_created.date()}}</td>
                 <td>
-                    <a href="#">Update</a>
-                    <a href="#">Delete</a>
+                    <a href="#" style="background-color: green; padding: 2px 6px 2px 6px; border-radius: 8px;">Update</a>
+                    <a href="#" style="background-color: grey; padding: 2px 9px 2px 9px; border-radius: 8px;">Delete</a>
                 </td>
             </tr>
             {% endfor %}
