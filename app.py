@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for,request
+from flask import Flask, render_template, url_for,request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -17,9 +17,18 @@ class Task(db.Model):
 @app.route('/', methods=['POST','GET'])
 def index():
     if request.method == 'POST':
-        pass
+        task_content = request.form['content']
+        new_task = Task(content=task_content) # task object
+
+        try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return 'There was an issue adding your task'
     else:
-        return render_template('index.html')
+        tasks= Task.query.order_by(Task.date_created).all()
+        return render_template('index.html', tasks=tasks)
         
 
 if __name__ == '__main__':
